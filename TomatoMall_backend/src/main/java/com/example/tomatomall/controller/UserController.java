@@ -18,20 +18,18 @@ public class UserController {
         return ResultVO.buildSuccess(userService.getUserInformation(username));
     }
 
-    /*
+    @PostMapping("/")
+    public ResultVO<String> createUser(@RequestBody UserVO userVO){
+        return ResultVO.buildSuccess(userService.createUser(userVO));
+    }
+
     @PostMapping("/login")
-    public ResultVO<String> login(@RequestParam("phone") String phone, @RequestParam("password") String password){
-        return ResultVO.buildSuccess(userService.login(phone, password));
+    public ResultVO<String> login(@RequestParam("username") String username, @RequestParam("password") String password){
+        return ResultVO.buildSuccess(userService.login(username, password));
     }
 
-    @GetMapping
-    public ResultVO<UserVO> getInformation(){
-        return ResultVO.buildSuccess(userService.getInformation());
+    @PutMapping("/")
+    public ResultVO<String> updateUserInformation(@RequestBody UserVO userVO){
+        return ResultVO.buildSuccess(userService.updateUserInformation(userVO));
     }
-
-    @PostMapping
-    public ResultVO<Boolean> updateInformation(@RequestBody UserVO userVO){
-        return ResultVO.buildSuccess(userService.updateInformation(userVO));
-    }
-     */
 }
