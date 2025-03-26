@@ -1,11 +1,12 @@
 package com.example.tomatomall.vo;
 
+import com.example.tomatomall.enums.RoleEnum;
 import com.example.tomatomall.po.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import javax.management.relation.RoleResult;
 
 @Getter
 @Setter
@@ -17,13 +18,13 @@ public class UserVO {
     private String password;      // 用户密码
     private String name;          // 用户姓名
     private String avatar;        // 用户头像链接
-    private String role;          // 用户身份
+    private RoleEnum role;          // 用户身份
     private String telephone;     // 用户手机号
     private String email;         // 用户邮箱
     private String location;
 
-    public UserVO toPO(){
-        UserVO user=new UserVO();
+    public User toPO(){
+        User user=new User();
         user.setId(this.id);
         user.setUsername(this.username);
         user.setPassword(this.password);
