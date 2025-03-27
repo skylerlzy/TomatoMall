@@ -17,13 +17,15 @@ public class ResultVO<T> implements Serializable {
 
     private String msg;
 
-    private T result;
+    private T data;
 
-    public static <T> ResultVO<T> buildSuccess(T result) {
-        return new ResultVO<T>("000", null, result);
+    public static <T> ResultVO<T> buildSuccess(T data) {
+        return new ResultVO<T>("200", null, data);
     }
 
     public static <T> ResultVO<T> buildFailure(String msg) {
         return new ResultVO<T>("400", msg, null);
     }
+
+    public static <T> ResultVO<T> notLogin() { return new ResultVO<T>("401", "not login", null); }
 }

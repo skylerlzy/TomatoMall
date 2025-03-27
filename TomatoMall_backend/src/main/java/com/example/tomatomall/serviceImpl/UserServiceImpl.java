@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserVO getUserInformation(String username) {
-        User user = securityUtil.getCurrentUser();
+        User user = userRepository.findByUsername(username);
         if (user == null) {
             throw TomatoMallException.userNotFound();
         }

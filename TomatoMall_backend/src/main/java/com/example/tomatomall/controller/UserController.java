@@ -14,21 +14,21 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/{username}")
-    public ResultVO<UserVO> getUserInformation(@RequestBody String username){
+    public ResultVO<UserVO> getUserInformation(@PathVariable String username){
         return ResultVO.buildSuccess(userService.getUserInformation(username));
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResultVO<String> createUser(@RequestBody UserVO userVO){
         return ResultVO.buildSuccess(userService.createUser(userVO));
     }
 
     @PostMapping("/login")
-    public ResultVO<String> login(@RequestParam("username") String username, @RequestParam("password") String password){
-        return ResultVO.buildSuccess(userService.login(username, password));
+    public ResultVO<String> login(@RequestBody UserVO userVO){
+        return ResultVO.buildSuccess(userService.login(userVO.getUsername(), userVO.getPassword()));
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResultVO<String> updateUserInformation(@RequestBody UserVO userVO){
         return ResultVO.buildSuccess(userService.updateUserInformation(userVO));
     }

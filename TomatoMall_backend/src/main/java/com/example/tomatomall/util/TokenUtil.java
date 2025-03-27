@@ -24,6 +24,8 @@ import java.util.Date;
 public class TokenUtil {
     private static final long EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
+    private static final String SECRET_KEY = "TomatoMall";
+
     @Autowired
     UserRepository userRepository;
 
@@ -32,14 +34,14 @@ public class TokenUtil {
         return JWT.create()
                 .withAudience(String.valueOf(user.getId()))
                 .withExpiresAt(date)
-                .sign(Algorithm.HMAC256(user.getPassword()));
+                .sign(Algorithm.HMAC256(SECRET_KEY));
     }
 
     public boolean verifyToken(String token) {
         try {
             Integer userId=Integer.parseInt(JWT.decode(token).getAudience().get(0));
-            User user= userRepository.findById(userId).get();
-            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getPassword())).build();
+
+            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(SECRET_KEY)).build();
             jwtVerifier.verify(token);
             return true;
         }catch (Exception e){
