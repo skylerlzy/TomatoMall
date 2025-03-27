@@ -9,6 +9,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(TomatoMallException.class)
     public ResultVO<String> handleBlueWhaleException(TomatoMallException e) {
         e.printStackTrace();
+        if (e.getMessage().matches("用户没有登录")) {
+            return ResultVO.notLogin();
+        }
         return ResultVO.buildFailure(e.getMessage());
     }
 

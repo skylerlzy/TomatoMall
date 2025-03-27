@@ -2,6 +2,8 @@ package com.example.tomatomall.configure;
 
 import com.example.tomatomall.exception.TomatoMallException;
 import com.example.tomatomall.util.TokenUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
 
+    private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
     @Autowired
     TokenUtil tokenUtil;
 
@@ -30,6 +33,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             request.getSession().setAttribute("currentUser",tokenUtil.getUser(token));
             return true;
         }else {
+            log.error("Token validation failed: {}", token);
             throw TomatoMallException.notLogin();
         }
     }
