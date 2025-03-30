@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="89b5230f-93a9-460b-9ee5-6120b3ecdf92" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto-imports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auto-imports.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/_prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/_prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/tool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/tool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/background/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/background/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/background/background3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/background/background3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shim-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shim-vue.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/router-meta.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/router-meta.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/user/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vite-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Composition API Component" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Cy10ne"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:/Cy10ne/TomatoMall.git",
+    "accountId": "9fe620f1-3029-43f9-b6e3-e2cfe4e73344"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+    &quot;associatedIndex&quot;: 1
+    }</component>
+  <component name="ProjectId" id="2tsb9Pfk2BglmW2lqVpp2q78S3t" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/27126/Desktop/Lab1-示例项目启动 (2)/Lab1-示例项目启动/bluewhale-frontend/node_modules&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\27126\\Desktop\\TomatoMall-Fronted\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\node_modules" />
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\node_modules\.vite" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\src\resources\background" />
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\src\resources\login" />
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\node_modules\memoize-one" />
+      <recent name="C:\Users\27126\Desktop\TomatoMall-Fronted\node_modules\.vite" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="89b5230f-93a9-460b-9ee5-6120b3ecdf92" name="更改" comment="" />
+      <created>1741143576993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741143576993</updated>
+      <workItem from="1741143579382" duration="2638000" />
+      <workItem from="1741146274145" duration="30000" />
+      <workItem from="1741146453238" duration="80000" />
+      <workItem from="1741154526684" duration="10299000" />
+      <workItem from="1741179067256" duration="6343000" />
+      <workItem from="1741230805609" duration="15000" />
+      <workItem from="1742049801573" duration="989000" />
+      <workItem from="1742094229489" duration="803000" />
+      <workItem from="1742455213969" duration="616000" />
+      <workItem from="1742744021987" duration="50000" />
+      <workItem from="1742804869175" duration="60000" />
+      <workItem from="1742805023929" duration="447000" />
+      <workItem from="1742805492796" duration="2665000" />
+      <workItem from="1742820385325" duration="4413000" />
+      <workItem from="1742894557191" duration="4974000" />
+      <workItem from="1743043695253" duration="11139000" />
+      <workItem from="1743059057630" duration="1982000" />
+      <workItem from="1743061079990" duration="584000" />
+      <workItem from="1743128164860" duration="4032000" />
+      <workItem from="1743229755309" duration="12798000" />
+      <workItem from="1743246990372" duration="693000" />
+      <workItem from="1743248171007" duration="8952000" />
+      <workItem from="1743312679957" duration="5208000" />
+      <workItem from="1743319208230" duration="30000" />
+      <workItem from="1743319484975" duration="409000" />
+      <workItem from="1743319903936" duration="594000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
