@@ -51,7 +51,7 @@ function updateInfo() {
     username: newUserName.value,
     name: newName.value,
     telephone: newTel.value,
-    password: password.value,
+    password: undefined,
     avatar:newAvatar.value,
     email: newEmail.value,
     location: newLocation.value,
@@ -173,18 +173,18 @@ function updatePassword() {
 
         <el-form-item>
           <label for="phone">手机号</label>
-          <el-input id="phone" v-model="tel"/>
+          <el-input id="phone" v-model="newTel"/>
         </el-form-item>
 
         <el-form-item>
           <label for="email">邮箱</label>
-          <el-input id="email" v-model="email"/>
+          <el-input id="email" v-model="newEmail"/>
         </el-form-item>
 
 
         <el-form-item >
           <label for="location">收货地址</label>
-          <el-input id="location" type="textarea" rows="4" v-model="location" placeholder="中华门"></el-input>
+          <el-input id="location" type="textarea" rows="4" v-model="newLocation" placeholder="......"></el-input>
         </el-form-item>
 
       </el-form>
