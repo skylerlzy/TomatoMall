@@ -51,7 +51,7 @@ function updateInfo() {
     username: newUserName.value,
     name: newName.value,
     telephone: newTel.value,
-    password: undefined,
+    password: password.value,
     avatar:newAvatar.value,
     email: newEmail.value,
     location: newLocation.value,
@@ -76,13 +76,13 @@ function updateInfo() {
 
 function updatePassword() {
   userInfoUpdate({
-    username: undefined,
-    name: undefined,
-    telephone: undefined,
+    username: username.value,
+    name: name.value,
+    telephone: tel.value,
     password: newPassword.value,
-    avatar:undefined,
-    email: undefined,
-    location: undefined,
+    avatar:avatar.value,
+    email: email.value,
+    location: location.value,
     role:"user",
   }).then(res => {
     if (res.data.code === '200') {
