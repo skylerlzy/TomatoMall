@@ -29,7 +29,7 @@ type UpdateInfo = {
 }
 
 export const userLogin = (loginInfo: LoginInfo) => {
-    return axios.post(`${USER_MODULE}/login`, null, {params: loginInfo})
+    return axios.post(`${USER_MODULE}/login`,  loginInfo)
         .then(res => {
             return res
         })
