@@ -2,13 +2,17 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/TomatoMall?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: 2520Ls
   jpa:
     hibernate:
       ddl-auto: update  # 自动更新数据库结构，开发阶段使用，生产环境建议使用none或validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect # MySQL数据库的方言
+        #调试
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
   # 你可以自定义一些其他配置，比如显示SQL
   h2:
     console:

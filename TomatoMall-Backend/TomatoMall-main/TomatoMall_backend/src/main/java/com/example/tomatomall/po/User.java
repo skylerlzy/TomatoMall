@@ -1,16 +1,13 @@
 package com.example.tomatomall.po;
 
-import com.example.tomatomall.vo.UserVO;
 import com.example.tomatomall.enums.RoleEnum;
 
 import javax.persistence.*;
 
+import com.example.tomatomall.vo.UserVO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 @Getter
 @Setter
