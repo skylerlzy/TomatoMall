@@ -48,17 +48,9 @@ public class ProductController {
 
 
     @PatchMapping("/stockpile/{productId}")
-    public ResultVO<String> amount(@PathVariable String productId, @RequestParam Integer amount) {
-        return ResultVO.buildSuccess(productService.amount(productId, amount));
+    public ResultVO<String> amount(@PathVariable String productId, @RequestBody StockpileVO stockpileVO) {
+        return ResultVO.buildSuccess(productService.amount(productId, stockpileVO.getAmount()));
     }
-
-    /*
-    @PatchMapping("/stockpile/{productId}")
-    public ResultVO<String> amount(@RequestBody StockpileVO stockpileVO) {
-        return ResultVO.buildSuccess(productService.amount(stockpileVO.getProductId().toString(), stockpileVO.getAmount()));
-    }
-     */
-
 
     @GetMapping("/stockpile/{productId}")
     public ResultVO<StockpileVO> findAmount(@PathVariable String productId) {

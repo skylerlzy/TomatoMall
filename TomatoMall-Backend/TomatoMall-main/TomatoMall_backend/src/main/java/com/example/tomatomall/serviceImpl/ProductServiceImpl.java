@@ -86,7 +86,7 @@ public class ProductServiceImpl implements ProductService {
     public String delete(String id) {
         if (productRepository.existsById(Integer.parseInt(id))) {
             productRepository.deleteById(Integer.parseInt(id));
-            stockpileRepository.deleteById(Integer.parseInt(id));
+            stockpileRepository.deleteByProductId(Integer.parseInt(id));
             return "删除成功";
         } else {
             throw TomatoMallException.productNotFound();
@@ -99,9 +99,7 @@ public class ProductServiceImpl implements ProductService {
         if (!productRepository.existsById(Integer.parseInt(productId))) {
             throw TomatoMallException.productNotFound();
         }
-        Stockpile stockpile = stockpileRepository.findById(Integer.parseInt(productId))
-                .orElseGet(() -> new Stockpile(Integer.parseInt(productId), 0, 0));
-
+        Stockpile stockpile = stockpileRepository.findByProductId(Integer.parseInt(productId));
         stockpile.setAmount(amount);
         stockpileRepository.save(stockpile);
         return "调整库存成功";
@@ -109,14 +107,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public StockpileVO findAmount(String productId) {
-        return stockpileRepository.findById(Integer.parseInt(productId))
-                .map(stockpile -> {
-                    new StockpileVO();
-                    StockpileVO vo;
-                    vo = stockpile.toVO();
-                    return vo;
-                })
-                .orElseThrow(TomatoMallException::productNotFound);
+        StockpileVO stockpileVO = new StockpileVO();
+        if (!productRepository.existsById(Integer.parseInt(productId))) {
+            throw TomatoMallException.productNotFound();
+        } else {
+            stockpileVO = stockpileRepository.findByProductId(Integer.parseInt(productId)).toVO();
+            return stockpileVO;
+        }
     }
 
     private ProductVO convertToVO(Product product) {
