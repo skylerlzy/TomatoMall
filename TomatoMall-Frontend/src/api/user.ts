@@ -43,7 +43,7 @@ export const userInfo = (username:string) => {
 
 // 用户注册
 export const userRegister = (registerInfo: RegisterInfo) => {
-    return axios.post(`${USER_MODULE}/register`, registerInfo,
+    return axios.post(`${USER_MODULE}`, registerInfo,
         {headers: {'Content-Type': 'application/json'}})
         .then(res => {
             return res

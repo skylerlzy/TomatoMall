@@ -12,4 +12,6 @@ export const ORDER_MODULE = `${API_MODULE}/orders`
 export const COUPON_MODULE = `${API_MODULE}/coupons`
 //评论模块
 export const COMMENT_MODULE = `${API_MODULE}/comments`
-
+//库存模块
+export const STOCK_MODULE = `${API_MODULE}/products/stockpile`
+//支付模块

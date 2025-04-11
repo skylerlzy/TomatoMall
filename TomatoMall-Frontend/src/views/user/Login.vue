@@ -55,7 +55,7 @@ function handleLogin() {
         sessionStorage.setItem('phone', res.data.data.phone)
         sessionStorage.setItem('telephone', res.data.data.telephone)
 
-        router.push({ path: "/dashboard" })
+        router.push({ path: "/allProduct" })
       })
     } else if (res.data.code === '400') {
       ElMessage({
@@ -70,6 +70,16 @@ function handleLogin() {
 </script>
 
 <template>
+  <el-header class = "custom-header" height ="20">
+    <el-row :gutter="0.2">
+      <el-col :span="3" class="header-icon">
+      <router-link to="null" v-slot="{ navigate }" class="no-link">
+        <h1 @click="navigate" class="header-text"> TomatoMall </h1>
+      </router-link>
+    </el-col>
+    </el-row>
+  </el-header>
+
   <el-main class="main-frame bgimage">
     <el-carousel :interval="4000" height="400px" type="card"  class="carousel">
       <el-carousel-item v-for="(image, index) in images" :key="index">
@@ -108,6 +118,31 @@ function handleLogin() {
 </template>
 
 <style scoped>
+.custom-header {
+  background-color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ffffff; /* 添加边框 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影*/
+}
+
+.no-link {
+  text-decoration: none;
+}
+
+.header-text {
+  color: #ff6402;
+  font-size: x-large;
+  min-width: max-content;
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+
 .main-frame {
   width: 100%;
   height: 100%;

@@ -24,6 +24,46 @@ const router = createRouter({
                 component: () => import('../views/user/Dashboard.vue'),
                 meta: {title: '个人信息'}
             },
+            {
+                path: '/allProduct',
+                name: 'allProduct',
+                component: () => import('../views/product/AllProduct.vue'),
+                meta: { title: '商品列表' }
+            },
+
+            {
+                path: '/createProduct',
+                name: 'createProduct',
+                component: () => import('../views/product/CreateProduct.vue'),
+                meta: {
+                    title: '创建商品',
+                    permission: ['admin']
+                }
+            },
+            {
+                path: '/productDetail/:productId',
+                name: 'productDetail',
+                component: () => import('../views/product/ProductDetail.vue'),
+                meta: { title: '商品详情' }
+            },
+            {
+                path: '/changeProductInfo/:productId',
+                name: 'changeProductInfo',
+                component: () => import('../views/product/ChangeProductInfo.vue'),
+                meta: {
+                    title: '修改商品信息',
+                    permission: ['admin']
+                }
+            },
+            {
+                path: '/stockManage/:productId',
+                name:'stockManage',
+                component: () => import('../views/product/StockManage.vue'),
+                meta:{
+                    title : '库存管理',
+                    permission: ['admin']
+                }
+            }
         ]
     }, {
         path: '/404',

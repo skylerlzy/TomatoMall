@@ -55,7 +55,7 @@ function updateInfo() {
     avatar:newAvatar.value,
     email: newEmail.value,
     location: newLocation.value,
-    role:"user"
+    role:undefined
   }).then(res => {
     if (res.data.code === '200') {
       ElMessage({

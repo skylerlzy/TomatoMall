@@ -1,5 +1,6 @@
 package com.example.tomatomall.controller;
 
+import com.example.tomatomall.po.User;
 import com.example.tomatomall.service.UserService;
 import com.example.tomatomall.util.TokenUtil;
 import com.example.tomatomall.vo.ResultVO;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import com.example.tomatomall.util.SecurityUtil;
+import com.example.tomatomall.exception.TomatoMallException;
 
 @RestController
 @RequestMapping("/api/accounts")
@@ -24,7 +26,7 @@ public class UserController {
         return ResultVO.buildSuccess(userService.getUserInformation(username));
     }
 
-    @PostMapping("")
+    @PostMapping("/register")
     public ResultVO<String> createUser(@RequestBody UserVO userVO){
         return ResultVO.buildSuccess(userService.createUser(userVO));
     }

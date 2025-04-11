@@ -14,7 +14,4 @@ public class TomatoMallException extends RuntimeException {
         return new TomatoMallException("用户名或密码错误");
     }
     public static TomatoMallException notLogin() {return new TomatoMallException("用户没有登录");}
-
-    public static TomatoMallException productNotFound() {return new TomatoMallException("商品不存在");}
-
 }
