@@ -9,6 +9,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect # MySQL数据库的方言
+        #调试
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
   # 你可以自定义一些其他配置，比如显示SQL
   h2:
     console:
