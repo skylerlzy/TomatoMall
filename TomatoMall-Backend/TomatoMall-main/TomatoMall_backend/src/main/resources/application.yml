@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/TomatoMall?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: 2520Ls
   jpa:
     hibernate:
       ddl-auto: update  # 自动更新数据库结构，开发阶段使用，生产环境建议使用none或validate
@@ -19,3 +19,12 @@ spring:
       enabled: true  # 如果你使用H2数据库进行调试时，开启控制台查看数据
 server:
   port: 8080
+alipay:
+  app-id: 2021000148600800
+  private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6k43hxds2QjW4RA/KaCeRWvzdBjFb1et4wuJeZeqWbyws/8AGCjZM2woREl2IfbhpI3Q4Ty2GLwJt93SRV4kpRxqTnhPAuqI7jU6pqeNFueQojnbUciotXI4hQ8NLxpeGDdDE/ZG8D6fjqTwqvxzEo5ZunZLwK+i5ulEuy40Z4qtf1ZllZpofFyaVPcebqekBNC+wVVgpAjfYCl6nGcr/UeUua1zu2HeJr8LwUpCICVaFwfxg3TpHJqz4LKqPZLO43gt+FPS7KNb5f0Be7fRaWd+LPMU58ckN1XTKlpRCTJSgM/+q4LZiT7bKLF4zsl7v23unYj6FgFIcG+4ftvUJAgMBAAECggEANH2q3ygRIlTCVFMhtipTZ3uXxH8nh9TJaLI7iZ9WvngMj6RsW8anvDuru13VXr8wELRe0DDGeAflwRZrfzCHcEuG2J0SpZhcaDC7PtSDEmzYGejq2Z4864IsooM0AK+glaBxadqFE8m7zDsiqEwYReJYQkqmuldAJHCcwnOWAP/ePhWLzYt4A3XvQxH71v4DV62TkyWRxOXd2Yze4Va7tijodvaeHLJ01I5zAzTz+Uj5/g4gtVetvemQ85kNaQQvr2TKCnPYwG61QbKh2semxpzvzioYe63oCGhDlg0P5Bgx7eBWWC4q5mr7l8R08h+bPLZKa5hgah/IRKTqO6R0GQKBgQD8qduLEj9D05Vm35y6HxG6PN20Psu0OtiC2U2SRDInzZwE3JZ6Ns0Qjoa62rS6ONMShnQBuJIDVOWtfMdmqj29Ctv18c0axoOoKrNPM+w5zZc8q4KyIZkuM6VMnZkz2aWanJf8hyIReUe28RcSXZH7qTMDxGDaTnfBOxKCWMsZgwKBgQC9CkkdeK3pGGm/I+GobDaD8B3J74lLXoxNrPnwbWEHHxjHopFroNmJQuy5Ty5+8hcXYujOmIQKzLhdITr8uQ+gy/3mISaDHnHXv0aE/TkT9iWK7AefqeBtAHMGLrPRaVhkCL4xSLm96/nywixctjZq0x5xI/kk3hZjqmY2QknNgwKBgF8cGZaqUcJYfV7yQe8WDvhKPTLCiK/ZjvMCld6/aRnunhJ+bu6mfl8DJ9hix7Fp/pp0nmqfbedvJ948oFsXLpJg6hgU4552p8y/9iuUYhIIQCwIa/ReDWmE626BzM/l2B7xX40h2UM2ojZNXt/89R0Evj1myQakjxPgBsGmZx29AoGAGCqKckQNJ3FBg3fYzykWRwOZK0l96a6qjPuB8CRrdPeauVqk8Hddl9iAXqgqr3vPS+QPEuoYZzEImI849TnLL6kkShkOzVBFCWmgYDvm4hBjeED4MIcM86JNEgtCXZD0BcXAWpiLdiYGi+was7dveXSHvbr1jKr/fbo42tLakHUCgYEA3crYuoQARoCHS37yuvktXsOgozysoHESZMZMwQ3L1IAQ5Vm/AOSqzT0GC82+ItcWK814Ige2m8Bc1o5nAw8r+6rLMSU1bgGyFYONv+YS7Rv+ITrGmFf68T3ejVePgZYWtt0nTjPByi37jWxo7noznrm6KiroDEPb2Nis0/+7eis=
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnAVkc+E4Ck5rAzz9jaZ0IBHhgwkBvqsPyXQwRRXNTlo1ajqAPGb0tw+aGvCS+sn5yCuSyoTVVYIT3WlQqJ3LSvLHpCih/M5Popomr6W0aGyABZxQvH3FVpHXICfxzwIESKB2d0+q94pGPXOj2asd6EvtHRMX+vP9BCtxA4gT7htVbN7ST2ZoxoNoXt0WY5TMzo5hrPqWkG2lWkl8K1ijBCIjcxTF3eGy0HXhwLdulxiCZwAFQi+ZXpTkWdGs/UugTFf87QAmFcAfwAq/RBRhBtWfkW1E44MN2RZ0wFN/OtZ4M92hg0M/jtBbw6dQvea/6EpqJSodRlAZl5XpF7HPUQIDAQAB
+  server-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  charset: utf-8
+  sign-type: RSA2
+  notify-url:  http://mkcaa9.natappfree.cc/alipay/notify(http://127.0.0.1:8080+/alipay/notify)
+  return-url:  http://mkcaa9.natappfree.cc/alipay/returnUrl(http://mkcaa9.natappfree.cc/alipay/notify)

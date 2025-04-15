@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 @Service
@@ -43,10 +45,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductVO findById(String id) {
-        Product product = productRepository.findById(Integer.parseInt(id)).get();
-        if (product == null) {
-            throw TomatoMallException.productNotFound();
-        }
+        Product product = productRepository.findById(Integer.parseInt(id))
+                .orElseThrow(TomatoMallException::productNotFound);
         return product.toVO();
     }
 
@@ -66,23 +66,37 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public ProductVO add(ProductVO productVO) {
         Product product = new Product();
-        BeanUtils.copyProperties(productVO, product);
-        //细节之处，通过这一步获取有效的id
+        product.setDescription(productVO.getDescription());
+        product.setDetail(productVO.getDetail());
+        product.setPrice(productVO.getPrice());
+        product.setCover(productVO.getCover());
+        product.setRate(productVO.getRate());
+        product.setTitle(productVO.getTitle());
+
         Product savedProduct = productRepository.save(product);
+        Integer product_id = savedProduct.getId();
+        product.setId(product_id);
 
+        List<Product.SpecificationPO> specs = Optional.ofNullable(productVO.getSpecifications())
+                .orElse(Collections.emptyList())  // 如果 getSpecifications() 返回 null，使用一个空的 List
+                .stream()
+                .map(specDTO -> {
+                    Product.SpecificationPO spec = new Product.SpecificationPO();
+                    spec.setItem(specDTO.getItem());
+                    spec.setValue(specDTO.getValue());
+                    spec.setProductId(product_id);
+                    // spec.setProduct(product); // 关键：设置关联的 Product
+                    return spec;
+                })
+                .collect(Collectors.toList());
 
-        //System.out.println(savedProduct.getSpecifications());
-        //System.out.println("/n/n/n/n/n/n/n/n/n/n/n");
+        savedProduct.setSpecifications(specs);
+        savedProduct = productRepository.save(savedProduct);
 
-        // 初始化库存
-        Stockpile stockpile = new Stockpile();
-        stockpile.setProductId(savedProduct.getId());
-        stockpile.setAmount(0);
-        stockpile.setFrozen(0);
-
-        stockpileRepository.save(stockpile);
-
-        return convertToVO(savedProduct);
+        ProductVO reVO = savedProduct.toVO();
+        // Ensure specifications are loaded
+        reVO.setSpecifications(savedProduct.specificationsToVO());
+        return reVO;
     }
 
     @Override
@@ -99,13 +113,21 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public String amount(String productId, Integer amount, Integer frozen) {
+    public String amount(String productId, Integer amount) {
         if (!productRepository.existsById(Integer.parseInt(productId))) {
             throw TomatoMallException.productNotFound();
         }
         Stockpile stockpile = stockpileRepository.findByProductId(Integer.parseInt(productId));
+        if (stockpile == null) {
+            Stockpile stock = new Stockpile();
+            stock.setProductId(Integer.parseInt(productId));
+            stock.setAmount(amount);
+            stock.setFrozen(0);
+            stockpileRepository.save(stock);
+            return "调整库存成功";
+        }
         stockpile.setAmount(amount);
-        stockpile.setFrozen(frozen);
+        stockpile.setFrozen(0);
         stockpileRepository.save(stockpile);
         return "调整库存成功";
     }

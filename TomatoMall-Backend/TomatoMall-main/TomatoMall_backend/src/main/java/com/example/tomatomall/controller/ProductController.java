@@ -49,7 +49,7 @@ public class ProductController {
 
     @PatchMapping("/stockpile/{productId}")
     public ResultVO<String> amount(@PathVariable String productId, @RequestBody StockpileVO stockpileVO) {
-        return ResultVO.buildSuccess(productService.amount(productId, stockpileVO.getAmount(), stockpileVO.getFrozen()));
+        return ResultVO.buildSuccess(productService.amount(productId, stockpileVO.getAmount()));
     }
 
     @GetMapping("/stockpile/{productId}")
