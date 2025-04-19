@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 
 @Getter
 @Setter
@@ -28,6 +30,10 @@ public class Stockpile {
     @Column(name = "frozen")
     private Integer frozen;
 
+    //time
+    @Column(name = "lock_time")
+    private Date lockTime;
+
     //注意这里的外键设置
     @OneToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
@@ -42,9 +48,10 @@ public class Stockpile {
         return vo;
     }
 
-    public Stockpile(Integer productId, Integer amount, Integer frozen) {
+    public Stockpile(Integer productId, Integer amount, Integer frozen, Date lockTime) {
         this.productId = productId;
         this.amount = amount;
         this.frozen = frozen;
+        this.lockTime = lockTime;
     }
 }

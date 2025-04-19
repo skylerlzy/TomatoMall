@@ -16,7 +16,7 @@ public interface ProductService {
 
     String delete(String id);
 
-    String amount(String productId, Integer amount, Integer frozen);
+    String amount(String productId, Integer amount);
 
     StockpileVO findAmount(String productId);
 }

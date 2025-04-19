@@ -24,7 +24,10 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/api/accounts")
                 .excludePathPatterns("/api/accounts/login")
                 .excludePathPatterns("/api/accounts/register")
+                .excludePathPatterns("/api/cart")
+                .excludePathPatterns("/api/cart/*")
                 .excludePathPatterns("/api/accounts/")
+                 .excludePathPatterns("/alipay/**")
                 .order(1);
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/**")
@@ -32,6 +35,7 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/api/accounts/login")
                 .excludePathPatterns("/api/accounts/register")
                 .excludePathPatterns("/api/accounts/")
+                .excludePathPatterns("/alipay/**")
                 .order(1);
     }
 
