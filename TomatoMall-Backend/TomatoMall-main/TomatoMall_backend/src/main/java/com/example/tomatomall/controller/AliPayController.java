@@ -6,8 +6,11 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+<<<<<<< HEAD
 import com.example.tomatomall.configure.AlipayConfig;
 import com.example.tomatomall.service.OrderService;
+=======
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
 import com.example.tomatomall.vo.AliPay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,17 +20,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import java.math.BigDecimal;
+=======
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @RestController
 @RequestMapping("/alipay")
 public class AliPayController {
+<<<<<<< HEAD
     private final AlipayConfig alipayConfig;
     @Value("${alipay.app-id}")
     private String appId;
     @Value("${alipay.app-private-key}")
+=======
+    @Value("${alipay.app-id}")
+    private String appId;
+    @Value("${alipay.private-key}")
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
     private String privateKey;
     @Value("${alipay.alipay-public-key}")
     private String alipayPublicKey;
@@ -42,11 +54,14 @@ public class AliPayController {
     @Value("${alipay.return-url}")
     private String returnUrl;
     private static final String FORMAT = "JSON";
+<<<<<<< HEAD
 
     public AliPayController(AlipayConfig alipayConfig) {
         this.alipayConfig = alipayConfig;
     }
 
+=======
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
     //vvvyyv9548@sandbox.com    支付邮箱
     @GetMapping("/pay") //subject=xxx&traceNo=xxx&totalAmount=xxx
     public void pay(AliPay aliPay, HttpServletResponse httpResponse) throws Exception {
@@ -79,6 +94,7 @@ public class AliPayController {
     public String payNotify(HttpServletRequest request) throws Exception {
         if (request.getParameter("trade_status").equals("TRADE_SUCCESS")) {
             System.out.println("=========支付宝异步回调========");
+<<<<<<< HEAD
            Map<String, String> params = new HashMap<>();
     Map<String, String[]> requestParams = request.getParameterMap();
     for (String name : requestParams.keySet()) {
@@ -93,6 +109,17 @@ public class AliPayController {
             String content = AlipaySignature.getSignCheckContentV1(params);
             params.put("sign", sign);
             boolean checkSignature = AlipaySignature.rsa256CheckContent(content, sign,alipayPublicKey, "UTF-8"); // 验证签名
+=======
+            Map<String, String> params = new HashMap<>();
+            Map<String, String[]> requestParams = request.getParameterMap();
+            for (String name : requestParams.keySet()) {
+                params.put(name, request.getParameter(name));
+                // System.out.println(name + " = " + request.getParameter(name));
+            }
+            String sign = params.get("sign");
+            String content = AlipaySignature.getSignCheckContentV1(params);
+            boolean checkSignature = AlipaySignature.rsa256CheckContent(content, sign, alipayPublicKey, "UTF-8"); // 验证签名
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
             // 支付宝验签
             if (checkSignature) {
                 // 验签通过 可做自己需要的操作
@@ -112,4 +139,8 @@ public class AliPayController {
     public String returnUrl() {
         return "支付成功了";
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a782c9bf154452cb686b2e8c8bc6b67b2097d3fe
