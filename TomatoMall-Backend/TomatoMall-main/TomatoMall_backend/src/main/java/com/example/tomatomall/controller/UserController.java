@@ -1,0 +1,49 @@
+package com.example.tomatomall.controller;
+
+import com.example.tomatomall.service.UserService;
+import com.example.tomatomall.util.TokenUtil;
+import com.example.tomatomall.vo.ResultVO;
+import com.example.tomatomall.vo.UserVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import com.example.tomatomall.util.SecurityUtil;
+
+@RestController
+@RequestMapping("/api/accounts")
+public class UserController {
+
+    SecurityUtil securityUtil = new SecurityUtil();
+    TokenUtil tokenUtil = new TokenUtil();
+
+    @Autowired
+    UserService userService;
+
+    @GetMapping("/{username}")
+    public ResultVO<UserVO> getUserInformation(@PathVariable String username){
+        return ResultVO.buildSuccess(userService.getUserInformation(username));
+    }
+
+    @PostMapping("")
+    public ResultVO<String> createUser(@RequestBody UserVO userVO){
+        return ResultVO.buildSuccess(userService.createUser(userVO));
+    }
+
+    @PostMapping("/login")
+    public ResultVO<String> login(@RequestBody UserVO userVO){
+        return ResultVO.buildSuccess(userService.login(userVO.getUsername(), userVO.getPassword()));
+    }
+
+   @PreAuthorize("isAuthenticated()")
+    @PutMapping
+    public ResultVO<String> updateUserInformation(@RequestBody UserVO userVO) {
+        return ResultVO.buildSuccess(userService.updateUserInformation(userVO));
+    }
+
+    @GetMapping("/list")
+    public ResultVO<List<UserVO>> getUserList() {
+        return ResultVO.buildSuccess(userService.getUserList());
+    }
+
+}
