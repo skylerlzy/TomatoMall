@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/TomatoMall?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动更新数据库结构，开发阶段使用，生产环境建议使用none或validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # MySQL数据库的方言
+        #调试
+        show_sql: false
+        format_sql: false
+        use_sql_comments: false
+  # 你可以自定义一些其他配置，比如显示SQL
+  h2:
+    console:
+      enabled: false  # 如果你使用H2数据库进行调试时，开启控制台查看数据
+server:
+  port: 8080
+
+# 支付宝配置
+alipay:
+  app-id: 2021000148610565
+  app-private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCNLhjTpt0/xOM8DPxiSl7kx3Nntu4DeixnVUbJFE6QM4AT0hxrf+agEVnfJ4v9iBBCt6JDnWm2HwzunOMLlDst5gc78VYLxPqe7JmSq0Lt5Ue9V6UfXbIzd0lmNbr+5BBF9EjmNb/2J3IlDVUo8mfyVwYVyFBMRndxdPpKuBU/KFR5GYYg5M1NisL2aDn/HIMGVmvraOog1cvCoBZyr0WEF4nh9G2NI8U6toSU3yM5q1n6t6dDa9eK4cctYR2kn7NbDleFbcsU3Tt0BIJ1CEb0X6HA5R3xcn9nb6Stv23TH7iWr3U0FWpyhF6uCq0FCkZooBTNdSUc3H1XKgjYy4VpAgMBAAECggEAeHydzYv8CJ9EewxuHIhyAffCIwJ4kNkkqi+aEKPXBLQfG0tW29u0/GiydYNvsrj7f6Tuw5vFCxvm0oFsN4aTFvHYvKyTjcnXReiQjB7DKPpjRlFVZ7Z0Df5A0w0KANyskrcPvAClSjOR89M0GZT/Z1AjrlVdSitdZqO5tCj0YQgIr1HgBo8avUp/LgCKDz0NlnGg/3V8l+67A3bVSNAMIyvKZ1jEGSRScroJZmckuCYJdBl3KIiITDSUfRNNm8Crw1ky7+gZNcb1V5fEOedN2It8qwC9j/yQI8xdR/PTZOMpd6pZMED4fglZh5HEWrjGNO3HfoUsoZpckx7Yk9rjbQKBgQDU/+2Q4jqDz/AKsG3iGpAKpDClkXv3uRX7iD+mV0Nb4smnE0ljgOa3YEmsmz6eSEIfqMyea76bVlXzApQC7P1hPAPeUXCbTO5cdFqxFzvtfEWcRWSqRJtQSJNFfKpZEgpkygCc3DO3FNH87v+TTGRidRRZCvO96n8mKA/dZNsMGwKBgQCprnI7kvOIU9CNmogH4KKCduKgkAY4okZWl3A4hlqjlOaVXzAypsIl4fKZRsMJ+7qXcu/8WgdH1jfMvqjliT6D9M74YrYovyFwIDcHxohpyFKIk5pM8NBkIDx4uvYiSQ0+HA8xa1/o7nAq2D5LmsEstuB51bw6Fg9fvH/qLkGEywKBgA2Dh1EP6WJ/iN1EwFP+F3F1ZVi72D+pUIm65T7qfm2P//dHs/pKLVkpFMOMvfZQ41Ea5pCOiXNVkPJwEW/2FUVcB2rNg/V2dhELmM1vie/RWKFHjdF3tNrtH9riw/QOvvYSEuPg3K8a9Q+1IiX4TM4qW3YiycAc5qBHHmqPgY5NAoGABCse70u649x7QR9MvDTOiTn2c09Wd8m0xKfPv/O9AkvEJmNCQdxK5LdaSF2uqO4gNVxDfQWRLDidAlCkwY7PlFpNQ1jZdMLNRX3lHDHKZB7huC04Gy/HTs5j7etZ5Jm6043I6cPjhUtmQgcx8JWKrViIxzVy/FJSal2tHsmoHmUCgYBXla/uqB5yx9K6WrE9NMydty+zPF3f0F86yENnsKpHolVLuqy5wAOSfckoh+f//H72r8DwOXYODqiQXLN9YDiM9R+EysJyma83DLdpH2U7sbO3bKd3P3UYMqUeKiSmaIYkUToqLqLYSpak/aAD94sNbiCiymNG8R1N+fqDXQbIjg==
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgWlwgOZgLveKuNZ5x1A91RJb9uzOJ05YY3ZWoqRt1Qlp89X3VM8Vj2+4Qj2mHASND5pjgUZbgxaEp0w1+mugxvdbJgS2AeK1kBSdMLm5abHxTnTZy0ZzIIwMtenXpfWU0GEJ8zqI8GZjZa/38MIH7fzljWEe8itOZ2MYUzBK7bPxzHb//MxPdTj1dKvAmCVjzEakDoRp5u3p5uKdHMAiiEU9HZa7tw8y9HGkL/gehFXaqw8pBmbRyrLXdU/dAhVYxy92RKc4xiGR4SUEeXNZQZMOIVxxi190yPDQO1Eaun5YpeWatBtXO5dcFw8X+p6XGyBJ4u7fDoWkSzbwyafP5wIDAQAB
+  server-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  charset: utf-8
+  sign-type: RSA2
+  #每次要重新配置
+  notify-url:  http://sfc76c5b.natappfree.cc/api/orders/notify
+  return-url:  http://localhost:3000/#/allCartItem #http://sfc76c5b.natappfree.cc/#/allCartItem
+
+# 阿里云配置
+# 注意要自己配置
+
